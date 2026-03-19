@@ -1,95 +1,127 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Mi Web Molona</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #1e1e2f, #3a3a6a);
-            color: white;
-            text-align: center;
-        }
+<meta charset="UTF-8">
+<title>🔥 METAL APOCALÍPTICO 🦖🏎️🍺</title>
 
-        header {
-            padding: 50px;
-            font-size: 2.5em;
-            font-weight: bold;
-            background: rgba(0,0,0,0.3);
-        }
+<style>
+body {
+    margin: 0;
+    background: black;
+    color: #ff2e2e;
+    font-family: Impact, sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+}
 
-        .content {
-            padding: 40px;
-        }
+/* Fuego animado */
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,100,0,0.2), transparent 70%);
+    animation: fuego 0.3s infinite alternate;
+    z-index: -1;
+}
 
-        .card {
-            background: rgba(255,255,255,0.1);
-            border-radius: 15px;
-            padding: 20px;
-            margin: 20px auto;
-            width: 300px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+@keyframes fuego {
+    from { transform: scale(1); }
+    to { transform: scale(1.05); }
+}
 
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-        }
+header {
+    font-size: 3em;
+    padding: 30px;
+    text-shadow: 0 0 20px red, 0 0 40px orange;
+}
 
-        button {
-            background: #ff4c60;
-            border: none;
-            padding: 15px 25px;
-            border-radius: 25px;
-            color: white;
-            font-size: 1em;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
+.section {
+    margin: 40px;
+}
 
-        button:hover {
-            background: #ff1e40;
-        }
+.card {
+    display: inline-block;
+    background: rgba(255,0,0,0.1);
+    border: 2px solid red;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
 
-        footer {
-            margin-top: 50px;
-            padding: 20px;
-            background: rgba(0,0,0,0.3);
-            font-size: 0.9em;
-        }
-    </style>
+.card:hover {
+    transform: scale(1.2) rotate(2deg);
+}
+
+/* Botón explosivo */
+button {
+    padding: 20px 40px;
+    font-size: 1.5em;
+    background: red;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 0 20px red;
+}
+
+button:hover {
+    background: orange;
+}
+
+/* Explosión */
+.explosion {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, yellow, orange, red, transparent);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: boom 0.6s ease-out forwards;
+}
+
+@keyframes boom {
+    to {
+        transform: scale(6);
+        opacity: 0;
+    }
+}
+</style>
 </head>
+
 <body>
 
 <header>
-    🚀 Mi Web To Molona
+🔥 METAL APOCALÍPTICO 🦖🏎️🍺 🔥
 </header>
 
-<div class="content">
-    <p>Bienvenido a mi página épica creada con estilo 🔥</p>
-
-    <div class="card">
-        <h3>Sobre mí</h3>
-        <p>Soy una persona increíble haciendo webs molonas 😎</p>
-    </div>
-
-    <div class="card">
-        <h3>Mis proyectos</h3>
-        <p>Aquí irán cosas guapas en el futuro 🚧</p>
-    </div>
-
-    <button onclick="saludar()">Haz click aquí</button>
+<div class="section">
+    <div class="card">🦖 DINOSAURIOS DESTRUCTORES</div>
+    <div class="card">🏎️ COCHES A 300KM/H</div>
+    <div class="card">🍺 CERVEZA INFINITA</div>
 </div>
 
-<footer>
-    © 2026 - Web creada con flow 💯
-</footer>
+<div class="section">
+    <button onclick="explosion(event)">💥 ACTIVAR CAOS 💥</button>
+</div>
+
+<audio autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
 
 <script>
-    function saludar() {
-        alert("¡Ey! 😎 Gracias por visitar mi web molona");
+function explosion(e) {
+    for (let i = 0; i < 10; i++) {
+        let boom = document.createElement("div");
+        boom.className = "explosion";
+        boom.style.left = (e.clientX + Math.random()*100 - 50) + "px";
+        boom.style.top = (e.clientY + Math.random()*100 - 50) + "px";
+        document.body.appendChild(boom);
+
+        setTimeout(() => boom.remove(), 600);
     }
+}
 </script>
 
 </body>
