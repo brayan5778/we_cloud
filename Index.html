@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Web Molona</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1e1e2f, #3a3a6a);
+            color: white;
+            text-align: center;
+        }
+
+        header {
+            padding: 50px;
+            font-size: 2.5em;
+            font-weight: bold;
+            background: rgba(0,0,0,0.3);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 300px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        button {
+            background: #ff4c60;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 25px;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #ff1e40;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            background: rgba(0,0,0,0.3);
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    🚀 Mi Web To Molona
+</header>
+
+<div class="content">
+    <p>Bienvenido a mi página épica creada con estilo 🔥</p>
+
+    <div class="card">
+        <h3>Sobre mí</h3>
+        <p>Soy una persona increíble haciendo webs molonas 😎</p>
+    </div>
+
+    <div class="card">
+        <h3>Mis proyectos</h3>
+        <p>Aquí irán cosas guapas en el futuro 🚧</p>
+    </div>
+
+    <button onclick="saludar()">Haz click aquí</button>
+</div>
+
+<footer>
+    © 2026 - Web creada con flow 💯
+</footer>
+
+<script>
+    function saludar() {
+        alert("¡Ey! 😎 Gracias por visitar mi web molona");
+    }
+</script>
+
+</body>
+</html>
